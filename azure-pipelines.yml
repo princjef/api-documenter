@@ -1,0 +1,41 @@
+trigger:
+  - master
+
+pr:
+  - master
+
+jobs:
+  - job: commitlint
+    pool:
+      vmImage: 'ubuntu-16.04'
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: 10.x
+        displayName: Use Node.js 10
+      - script: npm ci
+        displayName: Install Dependencies
+      - script: ./node_modules/.bin/commitlint-azure-pipelines
+        displayName: Lint Commits
+
+  - job: test
+    strategy:
+      matrix:
+        node_8:
+          nodeVersion: 8.x
+        node_10:
+          nodeVersion: 10.x
+        node_11:
+          nodeVersion: 11.x
+    pool:
+      vmImage: 'ubuntu-16.04'
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: $(nodeVersion)
+        displayName: Use Node.js $(nodeVersion)
+      - script: npm ci
+        displayName: Install Dependencies
+      - script: npm test
+        displayName: Run Tests
+

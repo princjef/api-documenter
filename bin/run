@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+
+require('../dist/cli/index.js').run()
+    .catch(require('@oclif/errors/handle'));
