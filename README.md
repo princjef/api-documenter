@@ -1,5 +1,8 @@
 # @princjef/api-documenter
 
+[![Build Status](https://dev.azure.com/princjef/github-ci/_apis/build/status/princjef.api-documenter?branchName=master)](https://dev.azure.com/princjef/github-ci/_build/latest?definitionId=6&branchName=master)
+[![npm version](https://img.shields.io/npm/v/@princjef/api-documenter.svg)](https://npmjs.org/package/@princjef/api-documenter)
+
 Automatic documentation of public APIs for Typescript packages.
 
 This package is forked from [`@microsoft/api-documenter`][api documenter] and is
