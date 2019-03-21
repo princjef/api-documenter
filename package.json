@@ -49,7 +49,7 @@
     "typescript": "^3.3.3333"
   },
   "files": [
-    "/{src,dist}",
+    "/{src,dist,bin}",
     "!/{src,dist}/**/test/**/*"
   ],
   "publishConfig": {
