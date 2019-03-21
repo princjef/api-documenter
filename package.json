@@ -1,6 +1,6 @@
 {
   "name": "@princjef/api-documenter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Automatically generate markdown documentation pages for Typescript packages.",
   "repository": {
     "type": "git",
