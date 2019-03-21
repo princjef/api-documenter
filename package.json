@@ -52,6 +52,9 @@
     "/{src,dist}",
     "!/{src,dist}/**/test/**/*"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
