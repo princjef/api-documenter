@@ -11,13 +11,14 @@
   "author": "Jeff Principe <princjef@gmail.com>",
   "scripts": {
     "commit": "commit",
+    "clean": "rimraf dist",
     "format": "prettier --write --loglevel warn \"src/**/*.ts\" \"*.md\"",
     "format-verify": "prettier --check --loglevel warn \"src/**/*.ts\" \"*.md\"",
     "lint": "tslint --project tsconfig.json --fix",
     "lint-verify": "tslint --project tsconfig.json",
     "prebuild": "npm run format && npm run lint",
     "build": "tsc",
-    "prebuild-verify": "npm run format-verify && npm run lint-verify",
+    "prebuild-verify": "npm run clean && npm run format-verify && npm run lint-verify",
     "build-verify": "tsc",
     "test": "npm run build-verify",
     "watch": "tsc -w",
@@ -44,6 +45,7 @@
     "commitlint-azure-pipelines-cli": "^1.0.1",
     "husky": "^1.3.1",
     "prettier": "^1.16.4",
+    "rimraf": "^2.6.3",
     "standard-version": "^5.0.1",
     "tslint": "^5.13.1",
     "typescript": "^3.3.3333"
